@@ -3,25 +3,7 @@
 # Description
 Repo for testing module feature in TFC
 
-## Usage
-
-```
-module "aws_basic_network" {
-  source = ""
-
-  aws_core_vpc_cidr                 = var.aws_core_vpc_cidr
-  aws_core_subnet_cidr1             = var.aws_core_subnet_cidr1
-  aws_core_az_1                     = var.aws_core_az_1
-  additional_public_cidrs           = var.additional_public_cidrs
-  map_public_ip                     = true
-  aws_core_vpc_enable_dns_hostnames = true
-
-  owner_tag       = var.owner_tag
-  environment_tag = var.environment_tag
-  prefix_tag      = var.prefix_tag
-}
-
-```
+`
 
 ## Requirements
 
@@ -72,3 +54,90 @@ No modules.
 | <a name="output_aws_sg_id"></a> [aws\_sg\_id](#output\_aws\_sg\_id) | AWS Default Security Group ID |
 | <a name="output_aws_subnet_id"></a> [aws\_subnet\_id](#output\_aws\_subnet\_id) | AWS Subnet ID |
 | <a name="output_aws_vpc_id"></a> [aws\_vpc\_id](#output\_aws\_vpc\_id) | AWS VPC ID |
+
+## Usage
+
+```
+module "aws_basic_network" {
+  source = ""
+
+  aws_core_vpc_cidr                 = var.aws_core_vpc_cidr
+  aws_core_subnet_cidr1             = var.aws_core_subnet_cidr1
+  aws_core_az_1                     = var.aws_core_az_1
+  additional_public_cidrs           = var.additional_public_cidrs
+  map_public_ip                     = true
+  aws_core_vpc_enable_dns_hostnames = true
+
+  owner_tag       = var.owner_tag
+  environment_tag = var.environment_tag
+  prefix_tag      = var.prefix_tag
+}
+
+```
+
+### variables.tf
+
+```
+
+variable "aws_region" {
+  description = "Region in AWS where resources will be created"
+  type        = string
+}
+
+variable "aws_core_vpc_cidr" {
+  description = "VPC CIDR block for the AWS Core VPC"
+  type        = string
+}
+
+variable "aws_core_subnet_cidr1" {
+  description = "CIDR block for first subnet of AWS Core network"
+  type        = string
+}
+
+variable "aws_core_az_1" {
+  description = "Availability zone for first subnet of AWS core network"
+  type        = string
+}
+
+variable "additional_public_cidrs" {
+  description = "List of additional cidrs that need to be added to ingress rules. In format 1.2.3.4/32"
+  type        = list(any)
+}
+
+# General variables
+variable "owner_tag" {
+  description = "Value that will be tagged as OWNER, on all AWS resources"
+  type        = string
+}
+
+variable "environment_tag" {
+  description = "Value that will be tagged as ENVIRONMENT, on all AWS resources"
+  type        = string
+}
+
+variable "prefix_tag" {
+  description = "Prefix string added to Name tag"
+  type        = string
+}
+
+
+```
+
+### terrafrom.tfvars
+
+```
+
+# Network variables
+aws_region               = "eu-west-1"
+aws_core_vpc_cidr        = "192.100.0.0/16"
+aws_core_subnet_cidr1    = "192.100.10.0/24"
+aws_core_az_1            = "eu-west-1a"
+additional_public_cidrs  = ["127.0.0.1/32"]
+
+# General variables
+
+owner_tag       = "Matthew_song"
+environment_tag = "DEV"
+prefix_tag      = "aws-mod-1-test-standard"
+
+```
