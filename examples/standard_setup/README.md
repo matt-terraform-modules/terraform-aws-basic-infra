@@ -1,6 +1,7 @@
 # standard_setup
 Configuration for a standard setup of an AWS network
 
+
 ## Requirements
 
 | Name | Version |
