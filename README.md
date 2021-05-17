@@ -1,5 +1,8 @@
 # terraform-aws-mod-1
 
+# Description
+Repo for testing module feature in TFC
+
 ## Usage
 
 ```
@@ -20,7 +23,7 @@ module "aws_basic_network" {
 
 ```
 
-Repo for testing module feature in TFC## Requirements
+## Requirements
 
 | Name | Version |
 |------|---------|
