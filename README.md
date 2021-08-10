@@ -1,9 +1,8 @@
 # terraform-aws-mod-1
 
 # Description
-Repo for testing module feature in TFC
-
-`
+Repo for testing module feature in TFC.
+Tests recursive modules as well.
 
 ## Requirements
 
@@ -16,36 +15,34 @@ Repo for testing module feature in TFC
 | Name | Version |
 |------|---------|
 | <a name="provider_aws"></a> [aws](#provider\_aws) | >= 3.40.0 |
-| <a name="provider_http"></a> [http](#provider\_http) | n/a |
 
 ## Modules
 
-No modules.
+| Name | Source | Version |
+|------|--------|---------|
+| <a name="module_aws_basic_network"></a> [aws\_basic\_network](#module\_aws\_basic\_network) | git::https://bitbucket.org/ecs-group/aws_basic_network.git | n/a |
 
 ## Resources
 
 | Name | Type |
 |------|------|
-| [aws_internet_gateway.aws_core_igw](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/internet_gateway) | resource |
-| [aws_route_table.aws_core_rt](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/route_table) | resource |
-| [aws_security_group.aws_core_sg](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/security_group) | resource |
-| [aws_subnet.aws_core_subnet1](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/subnet) | resource |
-| [aws_vpc.aws_core_vpc](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/vpc) | resource |
-| [http_http.my_ip_address](https://registry.terraform.io/providers/hashicorp/http/latest/docs/data-sources/http) | data source |
+| [aws_instance.single_instance](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/instance) | resource |
 
 ## Inputs
 
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
-| <a name="input_additional_public_cidrs"></a> [additional\_public\_cidrs](#input\_additional\_public\_cidrs) | List of additional cidrs that need to be added to ingress rules. In format 1.2.3.4/32 | `list(any)` | n/a | yes |
-| <a name="input_aws_core_az_1"></a> [aws\_core\_az\_1](#input\_aws\_core\_az\_1) | Availability zone for first subnet of AWS core network | `string` | n/a | yes |
-| <a name="input_aws_core_subnet_cidr1"></a> [aws\_core\_subnet\_cidr1](#input\_aws\_core\_subnet\_cidr1) | CIDR block for first subnet of AWS Core network | `string` | n/a | yes |
-| <a name="input_aws_core_vpc_cidr"></a> [aws\_core\_vpc\_cidr](#input\_aws\_core\_vpc\_cidr) | VPC CIDR block for the AWS Core VPC | `string` | n/a | yes |
-| <a name="input_aws_core_vpc_enable_dns_hostnames"></a> [aws\_core\_vpc\_enable\_dns\_hostnames](#input\_aws\_core\_vpc\_enable\_dns\_hostnames) | Enable DNS hostnames on the VPC | `string` | `"false"` | no |
+| <a name="input_additional_cidrs"></a> [additional\_cidrs](#input\_additional\_cidrs) | List of additional cidrs that need to be added to ingress rules. In format 1.2.3.4/32 | `list(any)` | <pre>[<br>  "212.250.145.34/32"<br>]</pre> | no |
+| <a name="input_aws_availability_zone"></a> [aws\_availability\_zone](#input\_aws\_availability\_zone) | The availability zone within the provider region the resources will be running, e.g. eu-west-1a and ap-southeast-1b | `string` | n/a | yes |
 | <a name="input_environment_tag"></a> [environment\_tag](#input\_environment\_tag) | Value that will be tagged as ENVIRONMENT, on all AWS resources | `string` | n/a | yes |
-| <a name="input_map_public_ip"></a> [map\_public\_ip](#input\_map\_public\_ip) | Specify true to indicate that instances launched into the subnet should be assigned a public IP address. | `string` | `"false"` | no |
+| <a name="input_has_public_ip"></a> [has\_public\_ip](#input\_has\_public\_ip) | Boolean to indicate if the public subnet needs to map public IPs to it | `bool` | `false` | no |
 | <a name="input_owner_tag"></a> [owner\_tag](#input\_owner\_tag) | Value that will be tagged as OWNER, on all AWS resources | `string` | n/a | yes |
 | <a name="input_prefix_tag"></a> [prefix\_tag](#input\_prefix\_tag) | Prefix string added to Name tag | `string` | n/a | yes |
+| <a name="input_single_instance_ami"></a> [single\_instance\_ami](#input\_single\_instance\_ami) | The ami of the single aws instance | `string` | n/a | yes |
+| <a name="input_single_instance_key_name"></a> [single\_instance\_key\_name](#input\_single\_instance\_key\_name) | The key name of the single aws instance | `string` | n/a | yes |
+| <a name="input_single_instance_type"></a> [single\_instance\_type](#input\_single\_instance\_type) | The instance type of the single aws instance | `string` | n/a | yes |
+| <a name="input_subnet_cidr"></a> [subnet\_cidr](#input\_subnet\_cidr) | The cidr block range of IP addresses for the subnet | `string` | `"192.0.0.0/24"` | no |
+| <a name="input_vpc_cidr"></a> [vpc\_cidr](#input\_vpc\_cidr) | The cidr block range of IP addresses for the virtual private cloud | `string` | `"192.0.0.0/16"` | no |
 
 ## Outputs
 
@@ -54,90 +51,5 @@ No modules.
 | <a name="output_aws_sg_id"></a> [aws\_sg\_id](#output\_aws\_sg\_id) | AWS Default Security Group ID |
 | <a name="output_aws_subnet_id"></a> [aws\_subnet\_id](#output\_aws\_subnet\_id) | AWS Subnet ID |
 | <a name="output_aws_vpc_id"></a> [aws\_vpc\_id](#output\_aws\_vpc\_id) | AWS VPC ID |
-
-## Usage
-
-```
-module "aws_basic_network" {
-  source = ""
-
-  aws_core_vpc_cidr                 = var.aws_core_vpc_cidr
-  aws_core_subnet_cidr1             = var.aws_core_subnet_cidr1
-  aws_core_az_1                     = var.aws_core_az_1
-  additional_public_cidrs           = var.additional_public_cidrs
-  map_public_ip                     = true
-  aws_core_vpc_enable_dns_hostnames = true
-
-  owner_tag       = var.owner_tag
-  environment_tag = var.environment_tag
-  prefix_tag      = var.prefix_tag
-}
-
-```
-
-### variables.tf
-
-```
-
-variable "aws_region" {
-  description = "Region in AWS where resources will be created"
-  type        = string
-}
-
-variable "aws_core_vpc_cidr" {
-  description = "VPC CIDR block for the AWS Core VPC"
-  type        = string
-}
-
-variable "aws_core_subnet_cidr1" {
-  description = "CIDR block for first subnet of AWS Core network"
-  type        = string
-}
-
-variable "aws_core_az_1" {
-  description = "Availability zone for first subnet of AWS core network"
-  type        = string
-}
-
-variable "additional_public_cidrs" {
-  description = "List of additional cidrs that need to be added to ingress rules. In format 1.2.3.4/32"
-  type        = list(any)
-}
-
-# General variables
-variable "owner_tag" {
-  description = "Value that will be tagged as OWNER, on all AWS resources"
-  type        = string
-}
-
-variable "environment_tag" {
-  description = "Value that will be tagged as ENVIRONMENT, on all AWS resources"
-  type        = string
-}
-
-variable "prefix_tag" {
-  description = "Prefix string added to Name tag"
-  type        = string
-}
-
-
-```
-
-### terrafrom.tfvars
-
-```
-
-# Network variables
-aws_region               = "eu-west-1"
-aws_core_vpc_cidr        = "192.100.0.0/16"
-aws_core_subnet_cidr1    = "192.100.10.0/24"
-aws_core_az_1            = "eu-west-1a"
-additional_public_cidrs  = ["127.0.0.1/32"]
-
-# General variables
-
-owner_tag       = "Matthew_song"
-environment_tag = "DEV"
-prefix_tag      = "aws-mod-1-test-standard"
-
-```
+| <a name="output_single_private_ip"></a> [single\_private\_ip](#output\_single\_private\_ip) | Private ip of the instance |
+| <a name="output_single_public_ip"></a> [single\_public\_ip](#output\_single\_public\_ip) | Public ip of the instance |

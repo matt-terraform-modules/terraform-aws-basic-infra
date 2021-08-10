@@ -1,12 +1,15 @@
+# Keypair variables
+key_name     = ""
+pub_key_file = ""
+
 # Network variables
-aws_region               = "eu-west-1"
-aws_core_vpc_cidr        = "192.100.0.0/16"
-aws_core_subnet_cidr1    = "192.100.10.0/24"
-aws_core_az_1            = "eu-west-1a"
-additional_public_cidrs  = ["127.0.0.1/32"]
+aws_core_vpc_cidr       = "192.100.0.0/16"
+aws_core_subnet_cidr    = "192.100.10.0/24"
+aws_core_az             = "ap-southeast-1a"
+additional_public_cidrs = ["127.0.0.1/32"]
 
 # General variables
-
+aws_region      = "ap-southeast-1"
 owner_tag       = "Matthew_song"
 environment_tag = "DEV"
 prefix_tag      = "aws-mod-1-test-standard"
