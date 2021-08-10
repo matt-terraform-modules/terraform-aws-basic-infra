@@ -23,7 +23,8 @@ resource "aws_instance" "single_instance" {
 }
 
 module "aws_basic_network" {
-  source = "git::https://bitbucket.org/ecs-group/aws_basic_network.git"
+  #source = "git::https://bitbucket.org/ecs-group/aws_basic_network.git"
+  source = "git::ssh://matthewsong@bitbucket.org/ecs-group/aws_basic_network.git"
 
   aws_core_vpc_cidr       = var.vpc_cidr
   aws_core_subnet_cidr1   = var.subnet_cidr
