@@ -1,8 +1,10 @@
 # Keypair variables
-key_name     = ""
-pub_key_file = ""
+key_name             = 
+pub_key_file_content = 
 
-# Network variables
+# Module variables
+single_instance_type = "t2.micro"
+
 aws_core_vpc_cidr       = "192.100.0.0/16"
 aws_core_subnet_cidr    = "192.100.10.0/24"
 aws_core_az             = "ap-southeast-1a"
@@ -10,6 +12,6 @@ additional_public_cidrs = ["127.0.0.1/32"]
 
 # General variables
 aws_region      = "ap-southeast-1"
+project_tag     = "aws-mod-1-test-standard"
 owner_tag       = "Matthew_song"
 environment_tag = "DEV"
-prefix_tag      = "aws-mod-1-test-standard"

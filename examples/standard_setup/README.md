@@ -1,4 +1,5 @@
 # standard_setup
+# Description
 Configuration of an AWS infrastructure with an ec2 instance that has a public_ip mapped to it.
 
 ## Requirements
@@ -12,7 +13,7 @@ Configuration of an AWS infrastructure with an ec2 instance that has a public_ip
 
 | Name | Version |
 |------|---------|
-| <a name="provider_aws"></a> [aws](#provider\_aws) | 3.53.0 |
+| <a name="provider_aws"></a> [aws](#provider\_aws) | 3.54.0 |
 
 ## Modules
 
@@ -35,12 +36,12 @@ Configuration of an AWS infrastructure with an ec2 instance that has a public_ip
 | <a name="input_aws_core_az"></a> [aws\_core\_az](#input\_aws\_core\_az) | Availability zone for first subnet of AWS core network | `string` | n/a | yes |
 | <a name="input_aws_core_subnet_cidr"></a> [aws\_core\_subnet\_cidr](#input\_aws\_core\_subnet\_cidr) | CIDR block for first subnet of AWS Core network | `string` | n/a | yes |
 | <a name="input_aws_core_vpc_cidr"></a> [aws\_core\_vpc\_cidr](#input\_aws\_core\_vpc\_cidr) | VPC CIDR block for the AWS Core VPC | `string` | n/a | yes |
-| <a name="input_aws_region"></a> [aws\_region](#input\_aws\_region) | Region in AWS where resources will be created | `string` | n/a | yes |
-| <a name="input_environment_tag"></a> [environment\_tag](#input\_environment\_tag) | Value that will be tagged as ENVIRONMENT, on all AWS resources | `string` | n/a | yes |
+| <a name="input_aws_region"></a> [aws\_region](#input\_aws\_region) | AWS region to use. | `string` | n/a | yes |
+| <a name="input_environment_tag"></a> [environment\_tag](#input\_environment\_tag) | Value for ENVIRONMENT tag that is applied to all AWS instances. | `string` | n/a | yes |
 | <a name="input_key_name"></a> [key\_name](#input\_key\_name) | The name of the aws key pair | `string` | n/a | yes |
-| <a name="input_owner_tag"></a> [owner\_tag](#input\_owner\_tag) | Value that will be tagged as OWNER, on all AWS resources | `string` | n/a | yes |
-| <a name="input_prefix_tag"></a> [prefix\_tag](#input\_prefix\_tag) | Prefix string added to Name tag | `string` | n/a | yes |
-| <a name="input_pub_key_file"></a> [pub\_key\_file](#input\_pub\_key\_file) | The public key file for the aws key pair | `string` | n/a | yes |
+| <a name="input_owner_tag"></a> [owner\_tag](#input\_owner\_tag) | Owner tag added to all AWS resources. | `string` | n/a | yes |
+| <a name="input_project_tag"></a> [project\_tag](#input\_project\_tag) | Descriptor prefixed to NAME tag on all AWS resources. | `string` | n/a | yes |
+| <a name="input_pub_key_file_content"></a> [pub\_key\_file\_content](#input\_pub\_key\_file\_content) | The public key file for the aws key pair | `string` | n/a | yes |
 | <a name="input_single_instance_type"></a> [single\_instance\_type](#input\_single\_instance\_type) | The instance type of the single aws instance | `string` | n/a | yes |
 
 ## Outputs
