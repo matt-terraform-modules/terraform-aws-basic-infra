@@ -1,16 +1,16 @@
 # Instance variables
-variable "single_instance_ami" {
-  description = "The ami of the single aws instance"
+variable "instance_ami" {
+  description = "The ami used for the aws instance"
   type        = string
 }
 
-variable "single_instance_type" {
-  description = "The instance type of the single aws instance"
+variable "instance_type" {
+  description = "The instance type of the aws instance"
   type        = string
 }
 
-variable "single_instance_key_name" {
-  description = "The key name of the single aws instance"
+variable "instance_key_name" {
+  description = "The key name used to connect to the aws instance"
   type        = string
 }
 
@@ -45,17 +45,7 @@ variable "has_public_ip" {
 }
 
 # General variables
-variable "environment_tag" {
-  description = "Value that will be tagged as ENVIRONMENT, on all AWS resources"
-  type        = string
-}
-
-variable "owner_tag" {
-  description = "Value that will be tagged as OWNER, on all AWS resources"
-  type        = string
-}
-
-variable "prefix_tag" {
-  description = "Prefix string added to Name tag"
+variable "project_tag" {
+  description = "Descriptor prefixed to NAME tag on all AWS resources."
   type        = string
 }
