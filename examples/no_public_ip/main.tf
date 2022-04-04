@@ -16,6 +16,7 @@ locals {
   environment_tag = "DEV"
 }
 
+# Data section
 data "aws_ami" "amazon_linux" {
   most_recent = true
   owners      = ["amazon"] # Canonical
@@ -36,9 +37,10 @@ data "aws_ami" "amazon_linux" {
   }
 }
 
+# Instance section
 resource "aws_key_pair" "aws_keypair" {
   key_name   = "test_key"
-  public_key = var.pub_key_file
+  public_key = var.pub_key_file_content
 }
 
 module "aws_basic_infra" {

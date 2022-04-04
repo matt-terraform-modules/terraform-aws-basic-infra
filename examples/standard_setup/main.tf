@@ -10,6 +10,7 @@ provider "aws" {
   }
 }
 
+# Data section
 data "aws_ami" "amazon_linux" {
   most_recent = true
   owners      = ["amazon"] # Canonical
@@ -30,6 +31,7 @@ data "aws_ami" "amazon_linux" {
   }
 }
 
+# Instance section
 resource "aws_key_pair" "aws_keypair" {
   key_name   = var.key_name
   public_key = var.pub_key_file_content

@@ -32,7 +32,7 @@ It also tests the use of locals, though a single variable is still needed as it 
 
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
-| <a name="input_pub_key_file"></a> [pub\_key\_file](#input\_pub\_key\_file) | The public key file for the aws key pair | `string` | n/a | yes |
+| <a name="input_pub_key_file_content"></a> [pub\_key\_file\_content](#input\_pub\_key\_file\_content) | The public key file for the aws key pair | `string` | n/a | yes |
 
 ## Outputs
 

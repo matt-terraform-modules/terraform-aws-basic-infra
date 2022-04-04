@@ -1,12 +1,22 @@
-# terraform-aws-mod-1
+# terraform-aws-basic-infra
 # Description
 Repo for testing module feature in TFC.
 Tests recursive modules as well.
+
+# Usage
+```
+module terraform-aws-basic-infra {
+source = "git@github.com:matt-terraform-modules/terraform-aws-basic-infra.git"
+
+# Insert the variables used here
+}
+```
 
 ## Requirements
 
 | Name | Version |
 |------|---------|
+| <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | >= 1.0.0 |
 | <a name="requirement_aws"></a> [aws](#requirement\_aws) | >= 3.40.0 |
 
 ## Providers
@@ -19,7 +29,7 @@ Tests recursive modules as well.
 
 | Name | Source | Version |
 |------|--------|---------|
-| <a name="module_aws_basic_network"></a> [aws\_basic\_network](#module\_aws\_basic\_network) | git::https://bitbucket.org/ecs-group/aws_basic_network.git | n/a |
+| <a name="module_aws_basic_network"></a> [aws\_basic\_network](#module\_aws\_basic\_network) | git@github.com:matt-terraform-modules/terraform-aws-core-network.git | v2.0.2 |
 
 ## Resources
 
@@ -33,13 +43,11 @@ Tests recursive modules as well.
 |------|-------------|------|---------|:--------:|
 | <a name="input_additional_cidrs"></a> [additional\_cidrs](#input\_additional\_cidrs) | List of additional cidrs that need to be added to ingress rules. In format 1.2.3.4/32 | `list(any)` | <pre>[<br>  "212.250.145.34/32"<br>]</pre> | no |
 | <a name="input_aws_availability_zone"></a> [aws\_availability\_zone](#input\_aws\_availability\_zone) | The availability zone within the provider region the resources will be running, e.g. eu-west-1a and ap-southeast-1b | `string` | n/a | yes |
-| <a name="input_environment_tag"></a> [environment\_tag](#input\_environment\_tag) | Value that will be tagged as ENVIRONMENT, on all AWS resources | `string` | n/a | yes |
 | <a name="input_has_public_ip"></a> [has\_public\_ip](#input\_has\_public\_ip) | Boolean to indicate if the public subnet needs to map public IPs to it | `bool` | `false` | no |
-| <a name="input_owner_tag"></a> [owner\_tag](#input\_owner\_tag) | Value that will be tagged as OWNER, on all AWS resources | `string` | n/a | yes |
-| <a name="input_prefix_tag"></a> [prefix\_tag](#input\_prefix\_tag) | Prefix string added to Name tag | `string` | n/a | yes |
-| <a name="input_single_instance_ami"></a> [single\_instance\_ami](#input\_single\_instance\_ami) | The ami of the single aws instance | `string` | n/a | yes |
-| <a name="input_single_instance_key_name"></a> [single\_instance\_key\_name](#input\_single\_instance\_key\_name) | The key name of the single aws instance | `string` | n/a | yes |
-| <a name="input_single_instance_type"></a> [single\_instance\_type](#input\_single\_instance\_type) | The instance type of the single aws instance | `string` | n/a | yes |
+| <a name="input_instance_ami"></a> [instance\_ami](#input\_instance\_ami) | The ami used for the aws instance | `string` | n/a | yes |
+| <a name="input_instance_key_name"></a> [instance\_key\_name](#input\_instance\_key\_name) | The key name used to connect to the aws instance | `string` | n/a | yes |
+| <a name="input_instance_type"></a> [instance\_type](#input\_instance\_type) | The instance type of the aws instance | `string` | n/a | yes |
+| <a name="input_project_tag"></a> [project\_tag](#input\_project\_tag) | The tag for the name/id of the project the resource is associated with. Can also be used in the name of resources | `string` | n/a | yes |
 | <a name="input_subnet_cidr"></a> [subnet\_cidr](#input\_subnet\_cidr) | The cidr block range of IP addresses for the subnet | `string` | `"192.0.0.0/24"` | no |
 | <a name="input_vpc_cidr"></a> [vpc\_cidr](#input\_vpc\_cidr) | The cidr block range of IP addresses for the virtual private cloud | `string` | `"192.0.0.0/16"` | no |
 

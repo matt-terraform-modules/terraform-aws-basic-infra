@@ -16,13 +16,12 @@ resource "aws_instance" "single_instance" {
   key_name               = var.instance_key_name
 
   tags = {
-    Name = "${var.project_tag}_AWS_SINGLE_INSTANCE"
+    Name = "${var.project_tag}_SINGLE_INSTANCE"
   }
 }
 
 module "aws_basic_network" {
-  #source = "git::https://bitbucket.org/ecs-group/aws_basic_network.git"
-  source = "git::ssh://matthew_song@bitbucket.org/ecs-group/aws_basic_network.git?ref=v2.0.1"
+  source = "git@github.com:matt-terraform-modules/terraform-aws-core-network.git?ref=v2.0.2"
 
   aws_core_vpc_cidr       = var.vpc_cidr
   aws_core_subnet_cidr    = var.subnet_cidr

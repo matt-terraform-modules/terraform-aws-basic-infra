@@ -46,6 +46,6 @@ variable "has_public_ip" {
 
 # General variables
 variable "project_tag" {
-  description = "Descriptor prefixed to NAME tag on all AWS resources."
+  description = "The tag for the name/id of the project the resource is associated with. Can also be used in the name of resources"
   type        = string
 }
