@@ -6,7 +6,7 @@ Tests recursive modules as well.
 # Usage
 ```
 module terraform-aws-basic-infra {
-source = "git@github.com:matt-terraform-modules/terraform-aws-basic-infra.git"
+source = "git@github.com:matt-terraform-modules/terraform-aws-basic-infra.git?ref=v4.0.0"
 
 # Insert the variables used here
 }
@@ -29,7 +29,7 @@ source = "git@github.com:matt-terraform-modules/terraform-aws-basic-infra.git"
 
 | Name | Source | Version |
 |------|--------|---------|
-| <a name="module_aws_basic_network"></a> [aws\_basic\_network](#module\_aws\_basic\_network) | git@github.com:matt-terraform-modules/terraform-aws-core-network.git | v2.0.2 |
+| <a name="module_aws_core_network"></a> [aws\_core\_network](#module\_aws\_core\_network) | git@github.com:matt-terraform-modules/terraform-aws-core-network.git | v2.0.2 |
 
 ## Resources
 

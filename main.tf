@@ -20,7 +20,7 @@ resource "aws_instance" "single_instance" {
   }
 }
 
-module "aws_basic_network" {
+module "aws_core_network" {
   source = "git@github.com:matt-terraform-modules/terraform-aws-core-network.git?ref=v2.0.2"
 
   aws_core_vpc_cidr       = var.vpc_cidr
