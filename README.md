@@ -1,12 +1,15 @@
 # terraform-aws-basic-infra
+
 # Description
+
 Repo for testing module feature in TFC.
 Tests recursive modules as well.
 
 # Usage
+
 ```
 module terraform-aws-basic-infra {
-source = "git@github.com:matt-terraform-modules/terraform-aws-basic-infra.git?ref=v4.0.0"
+  source = "git@github.com:matt-terraform-modules/terraform-aws-basic-infra.git?ref=v4.0.1"
 
 # Insert the variables used here
 }
@@ -29,7 +32,7 @@ source = "git@github.com:matt-terraform-modules/terraform-aws-basic-infra.git?re
 
 | Name | Source | Version |
 |------|--------|---------|
-| <a name="module_aws_core_network"></a> [aws\_core\_network](#module\_aws\_core\_network) | git@github.com:matt-terraform-modules/terraform-aws-core-network.git | v2.0.2 |
+| <a name="module_aws_core_network"></a> [aws\_core\_network](#module\_aws\_core\_network) | git@github.com:matt-terraform-modules/terraform-aws-core-network.git | v2.0.3 |
 
 ## Resources
 
@@ -55,8 +58,8 @@ source = "git@github.com:matt-terraform-modules/terraform-aws-basic-infra.git?re
 
 | Name | Description |
 |------|-------------|
-| <a name="output_aws_sg_id"></a> [aws\_sg\_id](#output\_aws\_sg\_id) | AWS Default Security Group ID |
-| <a name="output_aws_subnet_id"></a> [aws\_subnet\_id](#output\_aws\_subnet\_id) | AWS Subnet ID |
-| <a name="output_aws_vpc_id"></a> [aws\_vpc\_id](#output\_aws\_vpc\_id) | AWS VPC ID |
-| <a name="output_single_private_ip"></a> [single\_private\_ip](#output\_single\_private\_ip) | Private ip of the instance |
-| <a name="output_single_public_ip"></a> [single\_public\_ip](#output\_single\_public\_ip) | Public ip of the instance |
+| <a name="output_aws_sg_id"></a> [aws\_sg\_id](#output\_aws\_sg\_id) | The ID of the AWS Security Group |
+| <a name="output_aws_subnet_id"></a> [aws\_subnet\_id](#output\_aws\_subnet\_id) | The ID of the AWS Subnet |
+| <a name="output_aws_vpc_id"></a> [aws\_vpc\_id](#output\_aws\_vpc\_id) | The ID of the AWS VPC |
+| <a name="output_instance_private_ip"></a> [instance\_private\_ip](#output\_instance\_private\_ip) | The private IP of the instance |
+| <a name="output_instance_public_ip"></a> [instance\_public\_ip](#output\_instance\_public\_ip) | The public IP of the instance |

@@ -1,5 +1,7 @@
 # standard_setup
+
 # Description
+
 Configuration of an AWS infrastructure with an ec2 instance that has a public_ip mapped to it.
 
 ## Requirements
@@ -48,5 +50,5 @@ Configuration of an AWS infrastructure with an ec2 instance that has a public_ip
 
 | Name | Description |
 |------|-------------|
-| <a name="output_aws_vpc_id"></a> [aws\_vpc\_id](#output\_aws\_vpc\_id) | AWS VPC ID |
-| <a name="output_single_public_ip"></a> [single\_public\_ip](#output\_single\_public\_ip) | Public ip of the instance |
+| <a name="output_aws_vpc_id"></a> [aws\_vpc\_id](#output\_aws\_vpc\_id) | The ID of the AWS VPC |
+| <a name="output_instance_public_ip"></a> [instance\_public\_ip](#output\_instance\_public\_ip) | The public IP of the instance |

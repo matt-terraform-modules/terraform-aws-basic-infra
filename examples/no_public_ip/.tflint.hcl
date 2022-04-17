@@ -1,8 +1,7 @@
 # Configuration
 config {
     #varfile = ["secret.tfvars"]
-    #module = true
-    
+    #module = true 
 }
 
 # Provider plugins

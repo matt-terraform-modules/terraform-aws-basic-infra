@@ -1,4 +1,7 @@
 # no_public_ip
+
+# Description
+
 Configuration of an AWS infrastructure with an ec2 instance that has no public_ip mapped to it.
 It also tests the use of locals, though a single variable is still needed as it is never a good practice to push a SSH key into code repositories.
 
@@ -38,5 +41,5 @@ It also tests the use of locals, though a single variable is still needed as it 
 
 | Name | Description |
 |------|-------------|
-| <a name="output_aws_vpc_id"></a> [aws\_vpc\_id](#output\_aws\_vpc\_id) | AWS VPC ID |
-| <a name="output_single_private_ip"></a> [single\_private\_ip](#output\_single\_private\_ip) | Private ip of the instance |
+| <a name="output_aws_vpc_id"></a> [aws\_vpc\_id](#output\_aws\_vpc\_id) | The ID of the AWS VPC |
+| <a name="output_instance_public_ip"></a> [instance\_public\_ip](#output\_instance\_public\_ip) | The public IP of the instance |

@@ -1,9 +1,9 @@
-output "single_private_ip" {
-  description = "Private ip of the instance"
-  value       = module.aws_basic_infra.single_private_ip
+output "instance_public_ip" {
+  description = "The public IP of the instance"
+  value       = module.aws_basic_infra.single_public_ip
 }
 
 output "aws_vpc_id" {
-  description = "AWS VPC ID"
+  description = "The ID of the AWS VPC"
   value       = module.aws_basic_infra.aws_vpc_id
 }
