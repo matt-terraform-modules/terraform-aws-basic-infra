@@ -1,9 +1,9 @@
 terraform {
-  required_version = ">= 1.0.0"
+  required_version = ">= 1.3.6"
   required_providers {
     aws = {
       source  = "hashicorp/aws"
-      version = ">= 3.40.0"
+      version = "~> 4.46.0"
     }
   }
 }
@@ -11,8 +11,8 @@ terraform {
 resource "aws_instance" "single_instance" {
   ami                    = var.instance_ami
   instance_type          = var.instance_type
-  subnet_id              = module.aws_basic_network.aws_subnet_id
-  vpc_security_group_ids = [module.aws_basic_network.aws_sg_id]
+  subnet_id              = module.aws_core_network.aws_subnet_id
+  vpc_security_group_ids = [module.aws_core_network.aws_sg_id]
   key_name               = var.instance_key_name
 
   tags = {
@@ -21,7 +21,7 @@ resource "aws_instance" "single_instance" {
 }
 
 module "aws_core_network" {
-  source = "git@github.com:matt-terraform-modules/terraform-aws-core-network.git?ref=v2.0.3"
+  source = "git@github.com:matt-terraform-modules/terraform-aws-core-network.git?ref=v3.0.2"
 
   aws_core_vpc_cidr       = var.vpc_cidr
   aws_core_subnet_cidr    = var.subnet_cidr

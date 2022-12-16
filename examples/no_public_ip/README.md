@@ -1,22 +1,23 @@
 # no_public_ip
 
-# Description
+## Description
 
-Configuration of an AWS infrastructure with an ec2 instance that has no public_ip mapped to it.
+Tests the configuration of an AWS infrastructure with an ec2 instance that has no public_ip mapped to it.
 It also tests the use of locals, though a single variable is still needed as it is never a good practice to push a SSH key into code repositories.
 
+<!-- BEGIN_TF_DOCS -->
 ## Requirements
 
 | Name | Version |
 |------|---------|
-| <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | >= 1.0.0 |
-| <a name="requirement_aws"></a> [aws](#requirement\_aws) | >= 3.40.0 |
+| <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | >= 1.3.6 |
+| <a name="requirement_aws"></a> [aws](#requirement\_aws) | ~> 4.46.0 |
 
 ## Providers
 
 | Name | Version |
 |------|---------|
-| <a name="provider_aws"></a> [aws](#provider\_aws) | 3.53.0 |
+| <a name="provider_aws"></a> [aws](#provider\_aws) | 4.46.0 |
 
 ## Modules
 
@@ -42,4 +43,5 @@ It also tests the use of locals, though a single variable is still needed as it 
 | Name | Description |
 |------|-------------|
 | <a name="output_aws_vpc_id"></a> [aws\_vpc\_id](#output\_aws\_vpc\_id) | The ID of the AWS VPC |
-| <a name="output_instance_public_ip"></a> [instance\_public\_ip](#output\_instance\_public\_ip) | The public IP of the instance |
+| <a name="output_instance_private_ip"></a> [instance\_private\_ip](#output\_instance\_private\_ip) | The private IP of the instance |
+<!-- END_TF_DOCS -->

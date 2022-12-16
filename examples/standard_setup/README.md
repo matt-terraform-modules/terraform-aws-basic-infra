@@ -1,15 +1,16 @@
 # standard_setup
 
-# Description
+## Description
 
-Configuration of an AWS infrastructure with an ec2 instance that has a public_ip mapped to it.
+Tests configuration of an AWS infrastructure with an ec2 instance that has a public_ip mapped to it.
 
+<!-- BEGIN_TF_DOCS -->
 ## Requirements
 
 | Name | Version |
 |------|---------|
-| <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | >= 1.0.0 |
-| <a name="requirement_aws"></a> [aws](#requirement\_aws) | >= 3.40.0 |
+| <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | >= 1.3.6 |
+| <a name="requirement_aws"></a> [aws](#requirement\_aws) | ~> 4.46.0 |
 
 ## Providers
 
@@ -52,3 +53,4 @@ Configuration of an AWS infrastructure with an ec2 instance that has a public_ip
 |------|-------------|
 | <a name="output_aws_vpc_id"></a> [aws\_vpc\_id](#output\_aws\_vpc\_id) | The ID of the AWS VPC |
 | <a name="output_instance_public_ip"></a> [instance\_public\_ip](#output\_instance\_public\_ip) | The public IP of the instance |
+<!-- END_TF_DOCS -->

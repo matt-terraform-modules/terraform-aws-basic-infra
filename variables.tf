@@ -35,7 +35,7 @@ variable "aws_availability_zone" {
 variable "additional_cidrs" {
   description = "List of additional cidrs that need to be added to ingress rules. In format 1.2.3.4/32"
   type        = list(any)
-  default     = ["212.250.145.34/32"]
+  default     = ["127.0.0.1/32"]
 }
 
 variable "has_public_ip" {

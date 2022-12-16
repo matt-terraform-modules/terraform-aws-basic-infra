@@ -1,38 +1,39 @@
 # terraform-aws-basic-infra
 
-# Description
+## Description
 
 Repo for testing module feature in TFC.
 Tests recursive modules as well.
 
-# Usage
+## Usage
 
-```
+```terraform
 module terraform-aws-basic-infra {
-  source = "git@github.com:matt-terraform-modules/terraform-aws-basic-infra.git?ref=v4.0.1"
+  source = "git@github.com:matt-terraform-modules/terraform-aws-basic-infra.git?ref=v4.1.0"
 
 # Insert the variables used here
 }
 ```
 
+<!-- BEGIN_TF_DOCS -->
 ## Requirements
 
 | Name | Version |
 |------|---------|
-| <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | >= 1.0.0 |
-| <a name="requirement_aws"></a> [aws](#requirement\_aws) | >= 3.40.0 |
+| <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | >= 1.3.6 |
+| <a name="requirement_aws"></a> [aws](#requirement\_aws) | ~> 4.46.0 |
 
 ## Providers
 
 | Name | Version |
 |------|---------|
-| <a name="provider_aws"></a> [aws](#provider\_aws) | >= 3.40.0 |
+| <a name="provider_aws"></a> [aws](#provider\_aws) | ~> 4.46.0 |
 
 ## Modules
 
 | Name | Source | Version |
 |------|--------|---------|
-| <a name="module_aws_core_network"></a> [aws\_core\_network](#module\_aws\_core\_network) | git@github.com:matt-terraform-modules/terraform-aws-core-network.git | v2.0.3 |
+| <a name="module_aws_core_network"></a> [aws\_core\_network](#module\_aws\_core\_network) | git@github.com:matt-terraform-modules/terraform-aws-core-network.git | v3.0.2 |
 
 ## Resources
 
@@ -63,3 +64,4 @@ module terraform-aws-basic-infra {
 | <a name="output_aws_vpc_id"></a> [aws\_vpc\_id](#output\_aws\_vpc\_id) | The ID of the AWS VPC |
 | <a name="output_instance_private_ip"></a> [instance\_private\_ip](#output\_instance\_private\_ip) | The private IP of the instance |
 | <a name="output_instance_public_ip"></a> [instance\_public\_ip](#output\_instance\_public\_ip) | The public IP of the instance |
+<!-- END_TF_DOCS -->

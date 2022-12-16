@@ -1,5 +1,15 @@
+terraform {
+  required_version = ">= 1.3.6"
+  required_providers {
+    aws = {
+      source  = "hashicorp/aws"
+      version = "~> 4.46.0"
+    }
+  }
+}
+
 provider "aws" {
-  region = "ap-southeast-1"
+  region = "eu-west-2"
   default_tags {
     tags = {
       Project     = local.project_tag
@@ -52,7 +62,7 @@ module "aws_basic_infra" {
 
   vpc_cidr              = "192.100.0.0/16"
   subnet_cidr           = "192.100.10.0/24"
-  aws_availability_zone = "ap-southeast-1a"
+  aws_availability_zone = "eu-west-2a"
   additional_cidrs      = ["127.0.0.1/32"]
 
   project_tag = local.project_tag
