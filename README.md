@@ -45,7 +45,7 @@ module terraform-aws-basic-infra {
 
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
-| <a name="input_additional_cidrs"></a> [additional\_cidrs](#input\_additional\_cidrs) | List of additional cidrs that need to be added to ingress rules. In format 1.2.3.4/32 | `list(any)` | <pre>[<br>  "212.250.145.34/32"<br>]</pre> | no |
+| <a name="input_additional_cidrs"></a> [additional\_cidrs](#input\_additional\_cidrs) | List of additional cidrs that need to be added to ingress rules. In format 1.2.3.4/32 | `list(any)` | <pre>[<br>  "127.0.0.1/32"<br>]</pre> | no |
 | <a name="input_aws_availability_zone"></a> [aws\_availability\_zone](#input\_aws\_availability\_zone) | The availability zone within the provider region the resources will be running, e.g. eu-west-1a and ap-southeast-1b | `string` | n/a | yes |
 | <a name="input_has_public_ip"></a> [has\_public\_ip](#input\_has\_public\_ip) | Boolean to indicate if the public subnet needs to map public IPs to it | `bool` | `false` | no |
 | <a name="input_instance_ami"></a> [instance\_ami](#input\_instance\_ami) | The ami used for the aws instance | `string` | n/a | yes |
