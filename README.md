@@ -9,7 +9,7 @@ Tests recursive modules as well.
 
 ```terraform
 module terraform-aws-basic-infra {
-  source = "git@github.com:matt-terraform-modules/terraform-aws-basic-infra.git?ref=v4.1.1"
+  source = "git@github.com:matt-terraform-modules/terraform-aws-basic-infra.git?ref=v4.1.2"
 
 # Insert the variables used here
 }
@@ -21,19 +21,19 @@ module terraform-aws-basic-infra {
 | Name | Version |
 |------|---------|
 | <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | >= 1.4.5 |
-| <a name="requirement_aws"></a> [aws](#requirement\_aws) | ~> 4.64.0 |
+| <a name="requirement_aws"></a> [aws](#requirement\_aws) | ~> 5.1.0 |
 
 ## Providers
 
 | Name | Version |
 |------|---------|
-| <a name="provider_aws"></a> [aws](#provider\_aws) | ~> 4.64.0 |
+| <a name="provider_aws"></a> [aws](#provider\_aws) | ~> 5.1.0 |
 
 ## Modules
 
 | Name | Source | Version |
 |------|--------|---------|
-| <a name="module_aws_core_network"></a> [aws\_core\_network](#module\_aws\_core\_network) | git@github.com:matt-terraform-modules/terraform-aws-core-network.git | v3.0.3 |
+| <a name="module_aws_core_network"></a> [aws\_core\_network](#module\_aws\_core\_network) | git@github.com:matt-terraform-modules/terraform-aws-core-network.git | v3.0.4 |
 
 ## Resources
 
