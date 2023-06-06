@@ -10,7 +10,7 @@ Tests configuration of an AWS infrastructure with an ec2 instance that has a pub
 | Name | Version |
 |------|---------|
 | <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | >= 1.4.5 |
-| <a name="requirement_aws"></a> [aws](#requirement\_aws) | ~> 5.1.0 |
+| <a name="requirement_aws"></a> [aws](#requirement\_aws) | >= 5.1.0 |
 
 ## Providers
 

@@ -3,7 +3,7 @@ terraform {
   required_providers {
     aws = {
       source  = "hashicorp/aws"
-      version = "~> 5.1.0"
+      version = ">= 5.1.0"
     }
   }
 }
@@ -21,7 +21,7 @@ resource "aws_instance" "single_instance" {
 }
 
 module "aws_core_network" {
-  source = "git@github.com:matt-terraform-modules/terraform-aws-core-network.git?ref=v3.0.4"
+  source = "git@github.com:matt-terraform-modules/terraform-aws-core-network.git?ref=v3.0.5"
 
   aws_core_vpc_cidr       = var.vpc_cidr
   aws_core_subnet_cidr    = var.subnet_cidr
