@@ -1,9 +1,9 @@
 terraform {
-  required_version = ">= 1.4.5"
+  required_version = ">= 1.11.1"
   required_providers {
     aws = {
       source  = "hashicorp/aws"
-      version = ">= 5.1.0"
+      version = ">= 5.90.0"
     }
   }
 }
@@ -23,11 +23,11 @@ provider "aws" {
 # Data section
 data "aws_ami" "amazon_linux" {
   most_recent = true
-  owners      = ["amazon"] # Canonical
+  owners      = ["amazon"]
 
   filter {
     name   = "name"
-    values = ["amzn2-ami-hvm*x86_64-gp2"]
+    values = ["al2023-ami-2023.*-x86_64"]
   }
 
   filter {
