@@ -2,14 +2,13 @@
 
 ## Description
 
-Repo for testing module feature in TFC.
-Tests recursive modules as well.
+This module exists to test the HashiCorp Cloud Platform Terraform module feature and how recursive modules work.
 
 ## Usage
 
 ```terraform
 module terraform-aws-basic-infra {
-  source = "git@github.com:matt-terraform-modules/terraform-aws-basic-infra.git?ref=v4.1.2"
+  source = "git@github.com:matt-terraform-modules/terraform-aws-basic-infra.git?ref=v5.0.0"
 
 # Insert the variables used here
 }
@@ -20,20 +19,20 @@ module terraform-aws-basic-infra {
 
 | Name | Version |
 |------|---------|
-| <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | >= 1.4.5 |
-| <a name="requirement_aws"></a> [aws](#requirement\_aws) | >= 5.1.0 |
+| <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | >= 1.11.1 |
+| <a name="requirement_aws"></a> [aws](#requirement\_aws) | >= 5.90.0 |
 
 ## Providers
 
 | Name | Version |
 |------|---------|
-| <a name="provider_aws"></a> [aws](#provider\_aws) | >= 5.1.0 |
+| <a name="provider_aws"></a> [aws](#provider\_aws) | >= 5.90.0 |
 
 ## Modules
 
 | Name | Source | Version |
 |------|--------|---------|
-| <a name="module_aws_core_network"></a> [aws\_core\_network](#module\_aws\_core\_network) | git@github.com:matt-terraform-modules/terraform-aws-core-network.git | v3.0.5 |
+| <a name="module_aws_core_network"></a> [aws\_core\_network](#module\_aws\_core\_network) | git@github.com:matt-terraform-modules/terraform-aws-core-network.git | v4.0.0 |
 
 ## Resources
 
